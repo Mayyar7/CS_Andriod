@@ -58,16 +58,30 @@ public class AnagramDictionary {
     }
 
     public boolean isGoodWord(String word, String base) {
-        return true;
+        if(wordSet.contains(word) && !word.contains(base))
+             return true;
+        else
+            return false;
     }
 
     public ArrayList<String> getAnagrams(String targetWord) {
         ArrayList<String> result = new ArrayList<String>();
+
         return result;
     }
 
     public ArrayList<String> getAnagramsWithOneMoreLetter(String word) {
         ArrayList<String> result = new ArrayList<String>();
+        String temp_word1;
+        for (char i='a';i<='z';i++){
+            temp_word1 = i+word;
+            temp_word1 = alphabeticalOrder(temp_word1);
+
+            if (lettersToWord.containsKey(temp_word1)){
+                result.addAll(lettersToWord.get(temp_word1));
+            }
+        }
+
         return result;
     }
 
