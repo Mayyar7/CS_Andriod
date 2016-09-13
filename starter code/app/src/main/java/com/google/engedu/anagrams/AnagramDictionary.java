@@ -81,6 +81,14 @@ public class AnagramDictionary {
                 result.addAll(lettersToWord.get(temp_word1));
             }
         }
+        for (int i =0 ; i<result.size();i++){
+            Log.d("AD list",result.get(i));
+            if(!isGoodWord(result.get(i),word)){
+                Log.d("AD list" , result.remove(i));
+                result.remove(i);
+            }
+
+        }
 
         return result;
     }
